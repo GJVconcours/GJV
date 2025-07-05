@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Login</title>
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            var password = document.getElementById("password").value;
+            var message = document.getElementById("message");
+            if (password === "JVBON") {
+                message.textContent = "Félicitations ! Envoyé m8107 par mail !";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Mot de passe incorrect.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Connexion</h2>
+    <form onsubmit="checkPassword(event)">
+        Mot de passe: <input type="password" id="password" name="password" required>
+        <input type="submit" value="Se connecter">
+    </form>
+    <p id="message"></p>
+</body>
+</html>
